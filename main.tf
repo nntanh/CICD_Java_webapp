@@ -73,7 +73,14 @@ resource "aws_security_group" "lab_sg" {
     protocol = "tcp"
     cidr_blocks = [ "0.0.0.0/0" ]
   }
-  
+
+    ingress {
+    from_port = 8081
+    to_port = 8081
+    protocol = "tcp"
+    cidr_blocks = [ "0.0.0.0/0" ]
+  }
+
   egress {
     from_port = 0
     to_port = 0
@@ -112,7 +119,7 @@ resource "aws_instance" "lab_ansible_ctl" {
 
 resource "aws_instance" "lab_nexus_sv" {
   ami = "ami-064eb0bee0c5402c5"
-  instance_type = "t2.micro"
+  instance_type = "t2.medium"
   key_name = "awslab_asia"
   vpc_security_group_ids = [aws_security_group.lab_sg.id]
   subnet_id = aws_subnet.lab_pub_sn.id
