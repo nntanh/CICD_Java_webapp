@@ -23,3 +23,5 @@ echo 'ec2-user ALL=(ALL) NOPASSWD: ALL' | tee -a /etc/sudoers
 # Enable Password Authentication
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
+
+
