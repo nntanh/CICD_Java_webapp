@@ -10,7 +10,7 @@ sudo useradd aaa
 
 sudo echo "123567" | passwd --sdtin aaa
 
-# Add user ansible admin
+# Create user ansible admin
 useradd ansibleadmin
 
 # Set password: the below command will avoid re-entering the password

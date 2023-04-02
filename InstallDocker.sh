@@ -8,7 +8,11 @@ sudo systemctl enable docker
 
 sudo systemctl start docker
 
-# Add user ansible admin
+# Install docker module for Python2 (require for ansible)
+yum install python-pip -y
+pip install docker-py
+
+# Create user ansible admin
 useradd ansibleadmin
 
 # Set password: the below command will avoid re-entering the password
@@ -21,10 +25,6 @@ echo 'ec2-user ALL=(ALL) NOPASSWD: ALL' | tee -a /etc/sudoers
 # Enable Password Authentication
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
-
-# Install docker module for Python2 (require for ansible)
-yum install python-pip -y
-pip install docker-py
 
 # Add user ansible admin to docker group (execute without using sudo)
 usermod -a -G docker ansibleadmin

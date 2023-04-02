@@ -1,7 +1,9 @@
+# Define AWS cloud and Asia Pasific region for this pipeline
 provider "aws" {
   region = "ap-southeast-1"
 }
 
+# Create VPC
 resource "aws_vpc" "lab_vpc" {
   cidr_block = "10.0.0.0/16"
 
@@ -10,10 +12,12 @@ resource "aws_vpc" "lab_vpc" {
   }
 }
 
+# Create Internet Gateway 
 resource "aws_internet_gateway" "lab_ig" {
   vpc_id = aws_vpc.lab_vpc.id
 }
 
+# Create a subnet for all ec2
 resource "aws_subnet" "lab_pub_sn" {
   vpc_id = aws_vpc.lab_vpc.id
   cidr_block = "10.0.1.0/24"
@@ -23,6 +27,7 @@ resource "aws_subnet" "lab_pub_sn" {
   }
 }
 
+# Create a rtb to go the internet
 resource "aws_route_table" "lab_rtb" {
   vpc_id = aws_vpc.lab_vpc.id
   
@@ -36,14 +41,16 @@ resource "aws_route_table" "lab_rtb" {
   }
 }
 
+# Attach rtb to make subnet can go internet
 resource "aws_route_table_association" "lab_rtba" {
   subnet_id = aws_subnet.lab_pub_sn.id
   route_table_id = aws_route_table.lab_rtb.id
 }
 
+# Create SG for ec2. Allow http, https, ssh, 8080 for Jenkins, 8081 for Nexus
 resource "aws_security_group" "lab_sg" {
   name = "CICD SG"
-  description = "http https ssh 8080"
+  description = "http https ssh 8080 8081"
   vpc_id = aws_vpc.lab_vpc.id
 
   ingress {
@@ -89,6 +96,7 @@ resource "aws_security_group" "lab_sg" {
   }
 }
 
+# Create and install Jenkins ec2
 resource "aws_instance" "lab_jenkins_sv" {
   ami = "ami-064eb0bee0c5402c5"
   instance_type = "t2.micro"
@@ -103,6 +111,7 @@ resource "aws_instance" "lab_jenkins_sv" {
   }
 }
 
+# Create and install Ansible ec2
 resource "aws_instance" "lab_ansible_ctl" {
   ami = "ami-064eb0bee0c5402c5"
   instance_type = "t2.micro"
@@ -117,6 +126,7 @@ resource "aws_instance" "lab_ansible_ctl" {
   }
 }
 
+# Create and install Nexus ec2
 resource "aws_instance" "lab_nexus_sv" {
   ami = "ami-064eb0bee0c5402c5"
   instance_type = "t2.medium"
@@ -131,6 +141,7 @@ resource "aws_instance" "lab_nexus_sv" {
   }
 }
 
+# Create and install Docker ec2
 resource "aws_instance" "lab_docker" {
   ami = "ami-064eb0bee0c5402c5"
   instance_type = "t2.micro"
@@ -144,4 +155,3 @@ resource "aws_instance" "lab_docker" {
     Name = "Docker host"
   }
 }
-
