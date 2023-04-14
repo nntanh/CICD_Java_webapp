@@ -41,7 +41,7 @@ resource "aws_route_table" "lab_rtb" {
   }
 }
 
-# Attach rtb to make subnet can go internet
+# Attach rtb to subnet for going to internet
 resource "aws_route_table_association" "lab_rtba" {
   subnet_id = aws_subnet.lab_pub_sn.id
   route_table_id = aws_route_table.lab_rtb.id
