@@ -1,6 +1,6 @@
 # Create a CICD pipeline to deploy a front-end Java Web Application
 
-<details><summary><b>What is CICD pipeline?</b></summy>
+<details><summary><b>What is CICD pipeline?</b></summary>
 
 **CICD** is an automated process that includes both **Continuous Integration (CI)** and **Continuous Deployment/Delivery (CD)**. **CI** is the continuous integration and testing of source code, while **CD** is the continuous deployment of source code to production environments.
 
