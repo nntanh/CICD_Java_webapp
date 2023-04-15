@@ -1,4 +1,8 @@
-<h1 style="text-align: center;">Create a CICD pipeline to deploy a front-end Java Web Application</h1>
+<h1 align="center">
+<br>
+  Create a CICD pipeline to deploy a front-end Java Web Application
+  <br>
+</h1>
 
 <details><summary><b>What is CICD pipeline?</b></summary>
 
