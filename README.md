@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  Create a CICD pipeline to deploy a front-end Java Web Application
+  Create a CICD Pipeline to deploy a front-end Java Web Application
   <br>
 </h1>
 
@@ -34,4 +34,14 @@ In this tutorial, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexu
     - Deploy the application to the Docker host server using Ansible.
 
 When there is a change in the project's source code, the Jenkins server will automatically trigger the pipeline and perform the CI/CD process to ensure that the application is built, tested, and deployed automatically, reliably, and consistently.
+</details>
+
+## Pre-required
+- IAM user of AWS (Do not use root).
+- Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+- Run `aws configure` in terminal then enter Access key, Secret Key, default region name and output format to configure the user's login information and authentication with AWS (region name and output format are skippable).
+- Use or refer this repo to make your own Github repo for this lab.
+
+## Getting Started
+
 

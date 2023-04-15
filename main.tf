@@ -27,7 +27,7 @@ resource "aws_subnet" "lab_pub_sn" {
   }
 }
 
-# Create a rtb to go the internet
+# Create a rtb to go to internet
 resource "aws_route_table" "lab_rtb" {
   vpc_id = aws_vpc.lab_vpc.id
   
@@ -126,7 +126,7 @@ resource "aws_instance" "lab_ansible_ctl" {
   }
 }
 
-# Create and install Nexus ec2
+# Create and install Nexus ec2, it must be t2.medium
 resource "aws_instance" "lab_nexus_sv" {
   ami = "ami-064eb0bee0c5402c5"
   instance_type = "t2.medium"
