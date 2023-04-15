@@ -28,5 +28,6 @@ In this tutorial, **Pipeline** and **CICD** uses Jenkins, Ansible, Nexus and a D
     - Package the application into a Docker image.
     - Push the Docker image to a Docker Registry.
     - Deploy the application to the Docker host server using Ansible.
+    
 When there is a change in the project's source code, the Jenkins server will automatically trigger the pipeline and perform the CI/CD process to ensure that the application is built, tested, and deployed automatically, reliably, and consistently.
 
