@@ -9,10 +9,10 @@
 **Pipeline** can be used in the **CI** or **CD** process to automate the building, testing, and deployment of applications. Therefore, **Pipeline** and **CICD** are closely related and are often used together in software development projects.
 
 
-In this tutorial, **Pipeline** and **CICD** uses ``Jenkins``, ``Ansible``, ``Nexus`` and a ``Docker host``.
+In this tutorial, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexus`` and a ``Docker host``.
 
 - **Pipeline process steps:**
-    - The pipeline is built using Jenkinsfile, a file stored in the project's source code that describes the process of building, testing, packaging, and deploying the application. This pipeline uses the following tools and servers:
+    - The pipeline is built using [Jenkinsfile](./Jenkinsfile) and [source code](./src/) that describes the process of building, testing, packaging, and deploying the application. This pipeline uses the following tools and servers:
     - ``Jenkins``: used to run the pipeline and perform steps in the CI/CD process.
     - ``Nexus``: used to store artifacts, including JAR files, WAR files, and Docker images.
     - ``Ansible``: used to deploy configuration files and scripts during the application deployment process.
