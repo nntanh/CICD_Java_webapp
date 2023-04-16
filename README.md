@@ -41,13 +41,24 @@ When there is a change in the project's source code, the Jenkins server will aut
 - Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - Install [Terraform CLI](https://developer.hashicorp.com/terraform/downloads).
 - Run `aws configure` in terminal then enter Access key, Secret Key, default region name and output format to configure the user's login information and authentication with AWS (region name and output format are skippable).
+- Create a keypair in AWS console then save and give it full control or chmod 400 in your PC to remote ec2 later.
 - Use or refer this repo to make your own Github repo for this lab:
     - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
     - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
     - [Jenkinsfile](./Jenkinsfile) includes the whole pipeline stages that are run by Jenkins server.
     - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
     - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server.
+    - [hosts](./hosts) will define the controled-server IP for Ansible.
+    - [src](./src/) is Java Web source code.
 
 ## Getting Started
 
+### Provision infrastructure in AWS with Terraform
+Open Terminal and run.
+
+`terraform init`
+>This command is only for the first time use Terraform.
+
+`terraform apply --auto-approve`
+>This command is to provision all resources and infrastructure in `main.tf`
 
