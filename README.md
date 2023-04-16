@@ -62,7 +62,7 @@ Open Terminal and run.
     terraform apply --auto-approve
 >This command is to provision all resources and infrastructure in `main.tf`
 
-Open AWS console in EC2 resource and check.
+There will be 4 instances with their own services are provisioned.
 <h1 align="center">
 <img src="/images/EC2.png" width=100% height=100%>
 </h1>
