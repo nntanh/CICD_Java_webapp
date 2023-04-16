@@ -41,7 +41,7 @@ When there is a change in the project's source code, the Jenkins server will aut
 - Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 - Install [Terraform CLI](https://developer.hashicorp.com/terraform/downloads).
 - Run `aws configure` in terminal then enter Access key, Secret Key, default region name and output format to configure the user's login information and authentication with AWS (region name and output format are skippable).
-- Use or refer this repo to make your own Github repo for this lab. This repo includes:
+- Use or refer this repo to make your own Github repo for this lab:
     - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
     - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
     - [Jenkinsfile](./Jenkinsfile) includes the pipeline stages that are run by Jenkins server.
