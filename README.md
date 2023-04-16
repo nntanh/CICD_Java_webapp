@@ -89,8 +89,31 @@ Create Admin User.
 <img src="/images/AdminUser.png" width=100% height=100%>
 </h1>
 
-Click Not now to skip because this lab does not use Elastic IP and domain for Jenkins.
+Click Not now to skip because this lab does not use static IP and domain for Jenkins.
 
 <h1 align="center">
 <img src="/images/JenkinsURL.png" width=100% height=100%>
+</h1>
+
+Click New Item in Dashboard
+
+<h1 align="center">
+<img src="/images/JenkinsDashboard.png" width=100% height=100%>
+</h1>
+
+Fill the name of pipeline then choose and click OK
+
+<h1 align="center">
+<img src="/images/JenkinPipeline.png" width=100% height=100%>
+</h1>
+
+Follow the below highlight to configure
+<h1 align="center">
+<img src="/images/PipelineConfigure.png" width=100% height=100%>
+</h1>
+
+>Repository URL is taken from the Github repo
+
+<h1 align="center">
+<img src="/images/GithubRepo.png" width=50% height=50%>
 </h1>
