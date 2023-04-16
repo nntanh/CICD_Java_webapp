@@ -44,9 +44,9 @@ When there is a change in the project's source code, the Jenkins server will aut
 - Use or refer this repo to make your own Github repo for this lab:
     - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
     - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
-    - [Jenkinsfile](./Jenkinsfile) includes the pipeline stages that are run by Jenkins server.
+    - [Jenkinsfile](./Jenkinsfile) includes the whole pipeline stages that are run by Jenkins server.
     - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
-    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook file that is run 
+    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server
 
 ## Getting Started
 

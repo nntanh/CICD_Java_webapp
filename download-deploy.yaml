@@ -7,8 +7,7 @@
     - name: Download the war file
       shell: 'curl -u admin:admin -L "http://10.0.1.205:8081/service/rest/v1/search/assets/download?sort=version&repository=MyLab-RELEASE&maven.groupId=com.mylab&maven.artifactId=MyLab&maven.extension=war" -H "accept: application/json" --output /home/ansibleadmin/latest.war'
       args:
-        chdir: /home/ansibleadminI work in IT major with experience of conducting deploying, troubleshooting and collaborating with foreign team to provide system, network solution for user or customer. 
-I am dedicated to learning and seeking a full-time DevOps role for real-world experience to switch my career path.
+        chdir: /home/ansibleadmin
 
     - name: Create Dockerfile with content
       copy:
