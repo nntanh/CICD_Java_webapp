@@ -13,7 +13,7 @@
 **Pipeline** can be used in the **CI** or **CD** process to automate the building, testing, and deployment of applications. Therefore, **Pipeline** and **CICD** are closely related and are often used together in software development projects.
 
 
-In this tutorial, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexus`` and a ``Docker host``.
+In this lab, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexus`` and a ``Docker host``.
 
 - **Pipeline process steps:**
     - The pipeline is built using [Jenkinsfile](./Jenkinsfile) and [source code](./src/main/webapp/) that describes the process of building, testing, packaging, and deploying the application. This pipeline uses the following tools and servers:
@@ -46,7 +46,7 @@ When there is a change in the project's source code, the Jenkins server will aut
     - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
     - [Jenkinsfile](./Jenkinsfile) includes the whole pipeline stages that are run by Jenkins server.
     - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
-    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server
+    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server.
 
 ## Getting Started
 
