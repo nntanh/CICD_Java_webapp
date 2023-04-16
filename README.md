@@ -38,14 +38,15 @@ When there is a change in the project's source code, the Jenkins server will aut
 
 ## Pre-required
 - IAM user of AWS (Do not use root).
-- Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html) 
+- Setup [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+- Install [Terraform CLI](https://developer.hashicorp.com/terraform/downloads).
 - Run `aws configure` in terminal then enter Access key, Secret Key, default region name and output format to configure the user's login information and authentication with AWS (region name and output format are skippable).
 - Use or refer this repo to make your own Github repo for this lab. This repo includes:
-    - [main.tf](./main.tf) is used to deploy the infrastructure on AWS using terraform.
-    - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh), [InstallNexus.sh](./InstallNexus.sh) are script for terraform to install Services into ec2.
-    - [Jenkinsfile](./Jenkinsfile) is used to run the pipeline by Jenkins.
-    - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies.
-    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook file to 
+    - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
+    - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
+    - [Jenkinsfile](./Jenkinsfile) includes the pipeline stages that are run by Jenkins server.
+    - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
+    - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook file that is run 
 
 ## Getting Started
 
