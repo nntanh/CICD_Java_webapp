@@ -82,3 +82,15 @@ Choose Install Suggested Plugins for default plugins.
 <h1 align="center">
 <img src="/images/JenkinsPlugins.png" width=100% height=100%>
 </h1>
+
+Create Admin User.
+
+<h1 align="center">
+<img src="/images/AdminUser.png" width=100% height=100%>
+</h1>
+
+Click Not now to skip because this lab does not use Elastic IP and domain for Jenkins.
+
+<h1 align="center">
+<img src="/images/JenkinsURL.png" width=100% height=100%>
+</h1>
