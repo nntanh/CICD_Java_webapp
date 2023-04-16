@@ -44,7 +44,7 @@ When there is a change in the project's source code, the Jenkins server will aut
 - Create a keypair in AWS console then save and give it full control or chmod 400 in your PC to remote EC2 later.
 - Use or refer this repo to make your own Github repo for this lab:
     - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
-    - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are scripts to install services into EC2.
+    - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are userdata scripts to install services into EC2.
     - [Jenkinsfile](./Jenkinsfile) includes the whole pipeline stages that are run by Jenkins server.
     - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
     - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server.
@@ -65,4 +65,20 @@ Open Terminal and run.
 There will be 4 instances with their own services are provisioned.
 <h1 align="center">
 <img src="/images/EC2.png" width=100% height=100%>
+</h1>
+
+### Setup Jenkins pipeline
+Go to Jenkins console by `[the Jenkins public IP]:8080`
+<h1 align="center">
+<img src="/images/JenkinsConsole.png" width=100% height=100%>
+</h1>
+
+SSH to Jenkins server and take the Administrator Password as the highlight link using below command:
+    
+    sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Choose Install Suggested Plugins for default plugins.
+
+<h1 align="center">
+<img src="/images/JenkinsPlugins.png" width=100% height=100%>
 </h1>
