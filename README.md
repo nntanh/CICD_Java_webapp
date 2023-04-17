@@ -143,7 +143,7 @@ Configure Maven then click Apply and Save.
 <img src="/images/ConfigMaven.png" width=100% height=100%>
 </h1>
 
-In [Jenkinsfile](./Jenkinsfile), Maven is chosen.
+[Jenkinsfile](./Jenkinsfile) choose Maven for this Java project.
 <h1 align="center">
 <img src="/images/MavenChosen.png" width=30% height=30%>
 </h1>
@@ -167,7 +167,7 @@ Install in Plugin Manager
 <img src="/images/PipelineUS.png" width=100% height=100%>
 </h1>
 
-[Jenkinsfile](./Jenkinsfile) can use the variables from pom.xml thank to Pipeline Utility Steps.
+[Jenkinsfile](./Jenkinsfile) can use the variables from `pom.xml` thank to Pipeline Utility Steps.
 <h1 align="center">
-<img src="/images/POMVariables.png" width=100% height=100%>
+<img src="/images/POMVariables.png" width=70% height=70%>
 </h1>
