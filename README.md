@@ -145,7 +145,7 @@ Configure Maven then click Apply and Save.
 
 In [Jenkinsfile](./Jenkinsfile), Maven is chosen.
 <h1 align="center">
-<img src="/images/MavenChosen.png" width=50% height=50%>
+<img src="/images/MavenChosen.png" width=30% height=30%>
 </h1>
 
 Maven has a stage to build the Java artifact.
