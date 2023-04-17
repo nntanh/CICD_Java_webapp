@@ -111,7 +111,7 @@ Follow the below highlight to configure and click Apply then Save.
 <img src="/images/PipelineConfigure.png" width=100% height=100%>
 </h1>
 
->Repository URL is taken from the Github repo
+Repository URL is taken from the Github repo
 
 <h1 align="center">
 <img src="/images/GithubRepo.png" width=50% height=50%>
@@ -122,3 +122,25 @@ A fresh pipeline is created.
 <h1 align="center">
 <img src="/images/FreshPipeline.png" width=100% height=100%>
 </h1>
+
+#### Setup Maven
+<details><summary><b>What is Maven?</b></summary>
+
+**Maven** is a build automation tool primarily used for Java projects:
+- It follows a Project Object Model (pom.xml) file to download the specified dependencies.
+- Build the application by using the maven-compiler plugin to compile the Java source code.
+- Package the application into a packaging file (artifact), such as a JAR or WAR file, using the maven-jar or maven-war plugin.
+
+</details>
+
+Install Maven Integration plugin.
+<h1 align="center">
+<img src="/images/MavenPlugin.png" width=100% height=100%>
+</h1>
+
+Configure Maven then click Apply and Save.
+<h1 align="center">
+<img src="/images/ConfigMaven.png" width=100% height=100%>
+</h1>
+
+
