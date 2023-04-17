@@ -45,7 +45,7 @@ When there is a change in the project's source code, the Jenkins server will aut
     - [main.tf](./main.tf) is used to deploy the infrastructure on AWS by terraform.
     - [InstallAnsible.sh](./InstallAnsible.sh), [InstallDocker.sh](./InstallDocker.sh), [InstallJenkins.sh](./InstallJenkins.sh) and [InstallNexus.sh](./InstallNexus.sh) are userdata scripts to install services into EC2.
     - [Jenkinsfile](./Jenkinsfile) includes the whole pipeline stages that are run by Jenkins server.
-    - [pom.xml](./pom.xml) is configuration file to define the information of project and project dependencies or artifact information after building.
+    - [pom.xml](./pom.xml) is configuration file to define the information and dependencies of project or artifact information after building.
     - [download-deploy.yaml](./download-deploy.yaml) is Ansible playbook that includes the tasks will be run to build container in Docker host by Ansible server.
     - [hosts](./hosts) will define the controled-server IP for Ansible.
     - [src](./src/) is Java Web source code.
@@ -123,7 +123,7 @@ A fresh pipeline is created.
 <img src="/images/FreshPipeline.png" width=100% height=100%>
 </h1>
 
-#### Setup Maven
+### Setup Maven
 <details><summary><b>What is Maven?</b></summary>
 
 **Maven** is a build automation tool primarily used for Java projects:
@@ -153,3 +153,21 @@ Maven has a stage to build the Java artifact.
 <img src="/images/MavenBuild.png" width=50% height=50%>
 </h1>
 
+### Setup Pipeline Utility Steps plugin
+<details><summary><b>What is Pipeline Utility Steps?</b></summary>
+
+**Pipeline Utility Steps** plugin provides steps to access information from jobs, builds, and other objects in Jenkins and use them. These steps make deploying pipelines easier and more efficient.
+
+In this lab, **Pipeline Utility Steps** plugin uses the readMavenPom step to read the contents of the `pom.xml` file. This information can then be used to set variables or configurations within the pipeline.
+
+</details>
+
+Install in Plugin Manager
+<h1 align="center">
+<img src="/images/PipelineUS.png" width=100% height=100%>
+</h1>
+
+[Jenkinsfile](./Jenkinsfile) can use the variables from pom.xml thank to Pipeline Utility Steps.
+<h1 align="center">
+<img src="/images/POMVariables.png" width=100% height=100%>
+</h1>
