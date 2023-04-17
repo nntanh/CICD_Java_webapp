@@ -13,7 +13,7 @@
 **Pipeline** can be used in the **CI** or **CD** process to automate the building, testing, and deployment of applications. Therefore, **Pipeline** and **CICD** are closely related and are often used together in software development projects.
 
 
-In this lab, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexus`` and a ``Docker host``.
+In this lab, **Pipeline** and **CICD** use ``Jenkins``, ``Ansible``, ``Nexus (Sonatype)`` and a ``Docker host``.
 
 - **Pipeline process steps:**
     - The pipeline is built using [Jenkinsfile](./Jenkinsfile) and [source code](./src/main/webapp/). The [Jenkinsfile](./Jenkinsfile) describes the process of building, testing, packaging, and deploying the application. This pipeline uses the following tools and servers:
@@ -175,3 +175,46 @@ Install in Plugin Manager
 <h1 align="center">
 <img src="/images/PrintOutVariables.png" width=50% height=50%>
 </h1>
+
+### Setup Sonatype Nexus server
+<details><summary><b>What is Sonatype Nexus server?</b></summary>
+
+**Sonatype Nexus** is an open-source repository manager software used to manage and store software components (such as libraries, plugins, and other dependencies) of a software project. It allows developers, project managers, and DevOps experts to efficiently and safely manage these software components.
+
+**Nexus** supports multiple types of repositories, including Maven repositories, npm repositories, Docker repositories, and many other types of repositories. It enables developers to easily search and download software components from repositories and also provides tools to manage versions and access control. Additionally, Nexus can be integrated with other software development tools such as Apache Maven, Jenkins, and IntelliJ IDEA.
+
+In this lab, **Nexus** will store the artifact war file after building from Jenkins.
+
+</details>
+
+Open browser with ``[Nexus public IP]:8081`` in URL then click *Sign In* in right conner.
+<h1 align="center">
+<img src="/images/NexusSignIn.png" width=100% height=100%>
+</h1>
+
+Use ``sudo cat /opt/sonatype-work/nexus3/admin.password`` and take admin password then create new password is **admin** also -> choose *Enable anonymous access* -> go to *Finish*
+<h1 align="center">
+<img src="/images/NexusAnonymous.png" width=100% height=100%>
+</h1>
+
+Go to Setting icon -> *Repositories* tab -> click *Create Repository*.
+<h1 align="center">
+<img src="/images/NexusCreateRepo.png" width=100% height=100%>
+</h1>
+
+Choose *maven(hosted)*
+<h1 align="center">
+<img src="/images/MavenHostedRepo.png" width=100% height=100%>
+</h1>
+
+Fill the name with **MyLab-RELEASE** and choose type *Release*.
+<h1 align="center">
+<img src="/images/NexusReleaseRepo.png" width=100% height=100%>
+</h1>
+
+Do the same steps for snapshot repo with **MyLab-SNAPSHOT** and *Snapshot* type.
+<h1 align="center">
+<img src="/images/MavenRepos.png" width=100% height=100%>
+</h1>
+
+
