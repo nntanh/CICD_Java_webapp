@@ -169,9 +169,9 @@ Install in Plugin Manager
 
 [Jenkinsfile](./Jenkinsfile) can use the variables from [pom.xml](./pom.xml) and print them out thank to Pipeline Utility Steps.
 <h1 align="center">
-<img src="/images/POMVariables.png" width=70% height=70%>
+<img src="/images/POMVariables.png" width=50% height=50%>
 </h1>
 
 <h1 align="center">
-<img src="/images/PrintOutVariables.png" width=70% height=70%>
+<img src="/images/PrintOutVariables.png" width=50% height=50%>
 </h1>
