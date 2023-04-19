@@ -176,7 +176,7 @@ Install in Plugin Manager
 <img src="/images/PrintOutVariables.png" width=50% height=50%>
 </h1>
 
-### Setup Sonatype Nexus server
+### Setup Sonatype Nexus server and connection with Jenkins
 <details><summary><b>What is Sonatype Nexus server?</b></summary>
 
 **Sonatype Nexus** is an open-source repository manager software used to manage and store software components (such as libraries, plugins, and other dependencies) of a software project. It allows developers, project managers, and DevOps experts to efficiently and safely manage these software components.
@@ -186,6 +186,8 @@ Install in Plugin Manager
 In this lab, **Nexus** will store the artifact war file after building from Jenkins.
 
 </details>
+
+**On Nexus server**
 
 Open browser with ``[Nexus public IP]:8081`` in URL then click *Sign In* in right conner.
 <h1 align="center">
@@ -217,4 +219,20 @@ Do the same steps for snapshot repo with **MyLab-SNAPSHOT** and *Snapshot* type.
 <img src="/images/MavenRepos.png" width=100% height=100%>
 </h1>
 
+**On Jenkins server**
+Add new credential to access Nexus repo (server). That creadential is Nexus **admin** user. 
 
+*Add Credentials.*
+<h1 align="center">
+<img src="/images/AddCredential.png" width=100% height=100%>
+</h1>
+
+user & password: **admin**
+ID: **nexus**
+Click *Create*
+<h1 align="center">
+<img src="/images/JenkinCreadential.png" width=100% height=100%>
+</h1>
+<h1 align="center">
+<img src="/images/NexusCredential.png" width=100% height=100%>
+</h1>
