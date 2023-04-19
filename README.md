@@ -222,17 +222,57 @@ Do the same steps for snapshot repo with **MyLab-SNAPSHOT** and *Snapshot* type.
 **On Jenkins server**
 Add new credential to access Nexus repo (server). That creadential is Nexus **admin** user. 
 
-*Add Credentials.*
+Click *Add Credentials*.
 <h1 align="center">
 <img src="/images/AddCredential.png" width=100% height=100%>
 </h1>
 
 user & password: **admin**
 ID: **nexus**
-Click *Create*
+
 <h1 align="center">
 <img src="/images/JenkinCreadential.png" width=100% height=100%>
 </h1>
+
+Click *Create*.
 <h1 align="center">
 <img src="/images/NexusCredential.png" width=100% height=100%>
 </h1>
+
+Install `Nexus Artifact Uploader`.
+<h1 align="center">
+<img src="/images/NexusArtifactUploader.png" width=100% height=100%>
+</h1>
+
+It is done for **Nexus**!!
+
+### Setup Ansible connection.
+**On Jenkins**
+Install ``Publish Over SSH`` plugin.
+<h1 align="center">
+<img src="/images/SSHPlugin.png" width=100% height=100%>
+</h1>
+
+Add user and define the SSH server.
+<h1 align="center">
+<img src="/images/AnsibleUser.png" width=100% height=100%>
+</h1>
+
+Click *Test Configuration* (Success) -> *Apply* and *Save*
+<h1 align="center">
+<img src="/images/SSHTest.png" width=100% height=100%>
+</h1>
+
+**On Ansible**
+Connect to Ansible CLI with **ansibleadmin** user by ssh.
+    
+    ssh ansibleadmin@[Ansible Public IP]
+
+Create ssh keypair by command ``ssh-keygen`` then enter to *accept save private key default directory (/home/ansibleadmin/.ssh/id_rsa)* and *skip the passphrase*.
+
+Private and public key will be placed in `/home/ansibleadmin/.ssh`.
+
+Copy public key to Docker host by command to create ssh connection from Ansbile server without password login later.
+
+    ssh-copy-id ansibleadmin@[Docker host Private IP]
+
