@@ -276,3 +276,86 @@ Copy public key to Docker host by command to create ssh connection from Ansbile 
 
     ssh-copy-id ansibleadmin@[Docker host Private IP]
 
+### Create terraform file
+Refer the notes in [main.tf](./main.tf).
+
+### Create Jenkinsfile
+**Manual code**
+
+<h1 align="center">
+<img src="/images/PipelineMaven.png" width=50% height=50%>
+</h1>
+
+Use maven to build Java artifact
+
+<h1 align="center">
+<img src="/images/PipelinePOMvar.png" width=100% height=100%>
+</h1>
+
+Create varriables and get their value from ``pom.xml``
+
+<h1 align="center">
+<img src="/images/StageBuild.png" width=100% height=100%>
+</h1>
+
+Command to install package (artifact) by **maven**
+
+<h1 align="center">
+<img src="/images/NexusRepoDirection.png" width=100% height=100%>
+</h1>
+
+The code will check whether the variable Version ends with `SNAPSHOT` or not. If true, the variable NexusRepo will be set to the value `MyLab-SNAPSHOT`, otherwise it will be set to the value "MyLab-RELEASE".
+In this case, If the Version variable ends with `SNAPSHOT`, it will upload to `MyLab-SNAPSHOT` repository. Conversely, if it is not "SNAPSHOT", it will move to ``MyLab-RELEASE`` repository.
+
+**Snippet Generator**
+
+Follow the below highlights
+
+<h1 align="center">
+<img src="/images/NexusGenerate1.png" width=100% height=100%>
+</h1>
+
+<h1 align="center">
+<img src="/images/NexusGenerate2.png" width=100% height=100%>
+</h1>
+
+Nexus URL: *Nexus Public IP*
+Credentials: *User admin of Nexus are created in credential Jenkins*
+GroupId, Version, Repository: *Variables from `pom.xml`*
+
+Artifacts -> Click *Add*
+<h1 align="center">
+<img src="/images/NexusGenerate3.png" width=100% height=100%>
+</h1>
+
+Click *Generate Pipeline Script*
+<h1 align="center">
+<img src="/images/NexusGenerate4.png" width=100% height=100%>
+</h1>
+
+Then we can convert them like this.
+<h1 align="center">
+<img src="/images/NexusGenerate5.png" width=100% height=100%>
+</h1>
+
+
+### Create Ansible files
+Refer the names and notes in [download-deploy.yaml](./download-deploy.yaml)
+
+### Run Pipeline and Result
+Go into *"Javaweb" pipeline* -> Click *Build Now* to begin to run the pipeline.
+<h1 align="center">
+<img src="/images/Build1.png" width=100% height=100%>
+</h1>
+
+When you get the error alert -> Click the number of building time in conner -> *Console Output* to view the error.
+<h1 align="center">
+<img src="/images/error.png" width=100% height=100%>
+</h1>
+
+>In this lab, I define wrong some server IPs and maven version. 
+
+Success result in third run.
+<h1 align="center">
+<img src="/images/Result.png" width=100% height=100%>
+</h1>
