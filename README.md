@@ -343,7 +343,7 @@ Then we can convert them like this.
 Refer the names and notes in [download-deploy.yaml](./download-deploy.yaml)
 
 ### Run Pipeline and Result
-Go into *"Javaweb" pipeline* -> Click *Build Now* to begin to run the pipeline.
+Go into *"Javaweb" pipeline* -> Click *Build Now* to begin running the pipeline.
 <h1 align="center">
 <img src="/images/Build1.png" width=100% height=100%>
 </h1>
