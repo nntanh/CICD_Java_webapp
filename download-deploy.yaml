@@ -3,7 +3,7 @@
   hosts: dockerhost
   become: true
 
-  tasks:Just enjoy your hobbies, don't make them complicated. More money only creates more problems
+  tasks: 
     - name: Download the war file
       shell: 'curl -u admin:admin -L "http://10.0.1.20:8081/service/rest/v1/search/assets/download?sort=version&repository=MyLab-RELEASE&maven.groupId=com.mylab&maven.artifactId=MyLab&maven.extension=war" -H "accept: application/json" --output /home/ansibleadmin/latest.war'
       args:
@@ -19,7 +19,8 @@
                 RUN chmod +x $CATALINA_HOME/bin
                 EXPOSE 8080
                 CMD ["catalina.sh", "run"]
-# catalina.sh is a shell script used to start, stop, or manage the Apache Tomcat web application server. It is used to configure environment variables and start the Tomcat process.
+# catalina.sh is a shell script used to start, stop, or manage the Apache Tomcat web application server. 
+# It is used to configure environment variables and start the Tomcat process.
 
     - name: Build an image
       docker_image:
